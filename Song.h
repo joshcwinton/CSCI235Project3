@@ -32,4 +32,5 @@ private:
   std::string author_;
   std::string album_;
 };
+#include "Song.cpp"
 #endif
