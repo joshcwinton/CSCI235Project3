@@ -1,4 +1,5 @@
 #include "PlayList.h"
+#include <iostream>
 
 PlayList::PlayList(){
   head_ptr_ = nullptr;
