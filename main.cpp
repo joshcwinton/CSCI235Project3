@@ -61,17 +61,17 @@ int main() {
     std::cout << "\nPrinting playlist2 \n";
     playlist2.displayPlayList();   //**8 POINTS FOR CORRECT OUTPUT HERE**
     //
-    // std::cout << "\nAdd song to copied playlist\n";
-    // playlist2.add(song1);
-    // playlist2.displayPlayList();   //**5 POINTS FOR CORRECT OUTPUT HERE**
+    std::cout << "\nAdd song to copied playlist\n";
+    playlist2.add(song1);
+    playlist2.displayPlayList();   //**5 POINTS FOR CORRECT OUTPUT HERE**
     //
-    // std::cout << "\nRemove last song from copied playlist\n";
-    // playlist2.remove(song1);
-    // playlist2.displayPlayList();   //**5 POINTS FOR CORRECT OUTPUT HERE**
+    std::cout << "\nRemove last song from copied playlist\n";
+    playlist2.remove(song1);
+    playlist2.displayPlayList();   //**5 POINTS FOR CORRECT OUTPUT HERE**
     //
-    // std::cout << "\nRemove first song from copied playlist\n";
-    // playlist2.remove(song2);
-    // playlist2.displayPlayList();   //**5 POINTS FOR CORRECT OUTPUT HERE**
+    std::cout << "\nRemove first song from copied playlist\n";
+    playlist2.remove(song2);
+    playlist2.displayPlayList();   //**5 POINTS FOR CORRECT OUTPUT HERE**
 
 
     return 0;

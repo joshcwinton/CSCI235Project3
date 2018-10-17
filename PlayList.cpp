@@ -11,12 +11,6 @@ PlayList::PlayList(const Song& a_song){
   add(a_song);
 }
 
-PlayList::PlayList(const PlayList& a_play_list){
-  // tail_ptr_ = getPointerToLastNode();
-  // item_count_ = a_play_list.item_count_;
-  // head_ptr_->setItem();
-}
-
 PlayList::~PlayList(){
   unloop();
 }
@@ -55,23 +49,31 @@ bool PlayList::remove(const Song& a_song) {
       tail_ptr_ = prev_ptr;
       item_count_--;
       return true;
+    } else {
+      prev_ptr->setNext(my_ptr->getNext());
+      item_count_--;
+      return true;
     }
-
   }
+  return 0;
 }
 
 void PlayList::loop(){
-  // STUB
+  if(tail_ptr_ != nullptr){
+    tail_ptr_->setNext(head_ptr_);
+  }
 }
 
 void PlayList::unloop(){
-  // STUB
+  if(tail_ptr_ != nullptr){
+    tail_ptr_->setNext(nullptr);
+  }
 }
 
 void PlayList::displayPlayList(){
   std::vector<Song> display_vector = toVector();
   for(int i = 0; i < display_vector.size(); i++){
-    std::cout << "* Title: " << display_vector[i].getTitle() << " * Author: " << display_vector[i].getAuthor() << " * Album: " << display_vector[i].getAlbum() << " *" << std::endl;
+    std::cout << "* Title: " << display_vector[i].getTitle() << "* Author: " << display_vector[i].getAuthor() << "* Album: " << display_vector[i].getAlbum() << " *" << std::endl;
   }
   std::cout << "End of playlist" << '\n';
 }
