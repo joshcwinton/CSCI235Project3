@@ -11,9 +11,9 @@ PlayList::PlayList(const Song& a_song){
 }
 
 PlayList::PlayList(const PlayList& a_play_list){
-  tail_ptr_ = getPointerToLastNode();
-  item_count_ = a_play_list.item_count_;
-  head_ptr_->setItem()
+  // tail_ptr_ = getPointerToLastNode();
+  // item_count_ = a_play_list.item_count_;
+  // head_ptr_->setItem();
 }
 
 PlayList::~PlayList(){
