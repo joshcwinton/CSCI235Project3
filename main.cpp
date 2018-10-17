@@ -25,11 +25,11 @@ int main() {
     std::cout << "\nAdd songs to PlayList, check adding to end of chain and no duplicates allowed: \n";
 
     PlayList playlist1(song1);
-    // playlist1.add(song2);
-    // playlist1.add(song3);
-    // playlist1.add(song1);
-    // playlist1.add(song2);
-    // playlist1.add(song3);
+    std::cout << playlist1.add(song2) << std::endl;
+    std::cout << playlist1.add(song3) << std::endl;
+    std::cout << playlist1.add(song1) << std::endl;
+    std::cout << playlist1.add(song2) << std::endl;
+    std::cout << playlist1.add(song3) << std::endl;
     //
     // std::vector<Song> song_vector = playlist1.toVector();
     //

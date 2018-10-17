@@ -1,11 +1,15 @@
 #include "PlayList.h"
 
 PlayList::PlayList(){
-
+  head_ptr_ = nullptr;
+  tail_ptr_ = nullptr;
 }
 
 PlayList::PlayList(const Song& a_song){
-  PlayList::add(a_song);
+  Node<Song>* new_node = new Node<Song>(a_song, nullptr);
+  tail_ptr_ = new_node;
+  tail_ptr_->setNext(nullptr);
+  item_count_++;
 }
 
 PlayList::PlayList(const PlayList& a_play_list){
@@ -18,11 +22,9 @@ PlayList::~PlayList(){
 
 bool PlayList::add(const Song& new_song) {
   if(!contains(new_song)){
-    // Add to end of chain: new node references null pointer;
-    Node<Song>* next_node_ptr = new Node<Song>();
-    next_node_ptr->setItem(new_song);
-    tail_ptr_->setItem(next_node_ptr);
-    next_node_ptr->setNext(nullptr);  // New node points to chain
+    Node<Song>* next_node_ptr = new Node<Song>(new_song, nullptr);
+    tail_ptr_->setNext(next_node_ptr);
+    tail_ptr_=next_node_ptr;
     item_count_++;
     return true;
   }
@@ -48,10 +50,27 @@ void PlayList::displayPlayList(){
 
  // Pointer to last node
 Node<Song>* PlayList::getPointerToLastNode() const {
-  // STUB
+  Node<Song> *current = head_ptr_;
+  Node<Song> *previous = nullptr;
+  while (current != nullptr) {
+      previous = current;
+      current = current->getNext();
+  }
+  return previous;
 }
 
 //
 Node<Song>* PlayList::getPointerTo(const Song& target, Node<Song>*& previous_ptr) const {
-  // STUB
+  std::cout << "im working" << '\n';
+  Song my_target = target;
+  Node<Song> *current = head_ptr_;
+  Node<Song> *previous = nullptr;
+  while (current != nullptr) {
+      if(current->getItem() == my_target){
+        return current;
+      }
+      previous = current;
+      current = current->getNext();
+  }
+  return current;
 }
