@@ -31,35 +31,35 @@ int main() {
     std::cout << playlist1.add(song2) << std::endl;
     std::cout << playlist1.add(song3) << std::endl;
     //
-    // std::vector<Song> song_vector = playlist1.toVector();
+    std::vector<Song> song_vector = playlist1.toVector();
     //
-    // playlist1.displayPlayList();  //**10 POINTS FOR CORRECT OUTPUT HERE**
+    playlist1.displayPlayList();  //**10 POINTS FOR CORRECT OUTPUT HERE**
     //
-    // std::cout << "\n\nAdd remaining songs\n";
-    // playlist1.add(song4);
-    // playlist1.add(song5);
-    // playlist1.displayPlayList(); //**2 POINTS FOR CORRECT OUTPUT HERE**
+    std::cout << "\n\nAdd remaining songs\n";
+    playlist1.add(song4);
+    playlist1.add(song5);
+    playlist1.displayPlayList(); //**2 POINTS FOR CORRECT OUTPUT HERE**
     //
     //
-    // std::cout << "\n\nTest removing songs from PlayList, check that order is preserved\n";
+    std::cout << "\n\nTest removing songs from PlayList, check that order is preserved\n";
     //
-    // std::cout << "\nRemove from the middle\n";
-    // playlist1.remove(song3);
-    // playlist1.displayPlayList();   //**10 POINTS FOR CORRECT OUTPUT HERE**
+    std::cout << "\nRemove from the middle\n";
+    playlist1.remove(song3);
+    playlist1.displayPlayList();   //**10 POINTS FOR CORRECT OUTPUT HERE**
     //
-    // std::cout << "\nRemove first song\n";
-    // playlist1.remove(song1);
-    // playlist1.displayPlayList();  //**10 POINTS FOR CORRECT OUTPUT HERE**
+    std::cout << "\nRemove first song\n";
+    playlist1.remove(song1);
+    playlist1.displayPlayList();  //**10 POINTS FOR CORRECT OUTPUT HERE**
     //
-    // std::cout << "\nRemove last song\n";
-    // playlist1.remove(song5);
-    // playlist1.displayPlayList();    //**10 POINTS FOR CORRECT OUTPUT HERE**
+    std::cout << "\nRemove last song\n";
+    playlist1.remove(song5);
+    playlist1.displayPlayList();    //**10 POINTS FOR CORRECT OUTPUT HERE**
     //
-    // std::cout << "\n\nTest copy constructor\n";
+    std::cout << "\n\nTest copy constructor\n";
     //
-    // PlayList playlist2 = playlist1;
-    // std::cout << "\nPrinting playlist2 \n";
-    // playlist2.displayPlayList();   //**8 POINTS FOR CORRECT OUTPUT HERE**
+    PlayList playlist2 = playlist1;
+    std::cout << "\nPrinting playlist2 \n";
+    playlist2.displayPlayList();   //**8 POINTS FOR CORRECT OUTPUT HERE**
     //
     // std::cout << "\nAdd song to copied playlist\n";
     // playlist2.add(song1);
